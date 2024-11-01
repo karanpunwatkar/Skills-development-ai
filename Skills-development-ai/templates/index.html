@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>AI Skill Development Platform</title>
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>🌐 AI-Powered Skill Development Platform</h1>
+        <form method="POST">
+            <h2>Rate Your Skills (1 to 10)</h2>
+            <div class="skill-ratings fade-in-delayed">
+                {% for skill in ['Python', 'Java', 'C++', 'JavaScript', 'SQL', 'HTML/CSS', 'Data Analysis', 'Machine Learning', 'Communication Skills', 'Team Collaboration', 'Problem Solving', 'Time Management', 'Critical Thinking', 'Adaptability', 'Project Management', 'Negotiation', 'Leadership', 'Creativity', 'Networking', 'Customer Service', 'Public Speaking', 'Digital Marketing', 'Cloud Computing', 'Cybersecurity', 'UX/UI Design', 'Data Visualization', 'Business Analytics', 'Artificial Intelligence', 'DevOps'] %}
+                    <label for="{{ skill }}">{{ skill }}:</label>
+                    <input type="number" id="{{ skill }}" name="{{ skill }}" min="1" max="10" required>
+                {% endfor %}
+            </div>
+            <button type="submit" class="submit-btn fade-in-delayed">Submit</button>
+        </form>
+
+        {% if gaps %}
+            <h2>Skill Gaps Identified</h2>
+            <ul class="fade-in">
+                {% for skill, gap in gaps.items() %}
+                    <li>{{ skill }}: {{ gap }} point(s) below industry standard</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Recommended Courses</h2>
+            <ul class="fade-in">
+                {% for skill, courses in recommendations.items() %}
+                    <li><strong>{{ skill }}:</strong> {{ courses | join(', ') }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

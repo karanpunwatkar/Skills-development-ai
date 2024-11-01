@@ -1,0 +1,125 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #555;
+  margin-top: 25px;
+}
+
+/* Skill Ratings Section */
+.skill-ratings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.skill-ratings label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+}
+
+input[type="number"] {
+  width: 100%;
+  max-width: 60px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #3498db;
+  outline: none;
+  transform: scale(1.05);
+}
+
+button.submit-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button.submit-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  padding: 8px;
+  font-size: 1.1em;
+  background: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  background: #eef;
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fade-in-delayed {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.fade-in-delayed label,
+.fade-in-delayed input {
+  animation: fadeIn 1.5s ease-in-out;
+}
